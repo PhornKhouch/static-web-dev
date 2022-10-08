@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .left-menu{
+        width: 200px;
+        min-height: 100vh;
+        position: absolute;
+        background-color: violet;
+        left: -200px;
+        transition: 0.5s;
+    }
+    .left-menu ul{
+        list-style-type: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+    .left-menu ul li a{
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: wheat;
+        font-size: 24px;
+        font-weight: bolder;
+        font-family: sans-serif;
+    }
+    .btn-menu{
+        width: 100px;
+        padding: 10px;
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+        color: blue;
+        background-color: green;
+        border-radius: 10px;
+        top: 30px;
+        left: 30px;
+        position: absolute;
+        cursor: pointer;
+    }
+    #btn-close{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: red;
+        color: white;
+        top: 5px;
+        right: 5px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+    }
+</style>
+<body>
+    <div class="left-menu" id="left-menu">
+        <div id="btn-close">
+            X
+        </div>
+        <ul>
+            <li>
+                <a href="">HOME</a>
+            </li>
+            <li>
+                <a href="">Contact</a>
+            </li>
+            <li>
+                <a href="">Setting</a>
+            </li>
+            <li>
+                <a href="">Account</a>
+            </li>
+        </ul>
+    </div>
+    <div class="btn-menu" id="btn">
+        menu
+    </div>
+</body>
+<script>
+    var menu=document.getElementById('left-menu');
+    var button=document.getElementById('btn');
+    var btn_close=document.getElementById('btn-close');
+    button.addEventListener('click',function(){
+        menu.style.left="0px";
+        button.style.display="none";
+    })
+
+    btn_close.addEventListener('click',function(){
+        menu.style.left="-200px";
+        button.style.display="block";
+    })
+</script>
+</html>
